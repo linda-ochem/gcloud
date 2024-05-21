@@ -41,7 +41,7 @@ jobs:
           npm run build
           gcloud app deploy app.yaml --quiet
 
-      # - name: Generate commit SHA
+      ## - name: Generate commit SHA
       #   id: commit_sha
       #   run: echo "::set-output name=sha::$(git rev-parse HEAD)"
 
