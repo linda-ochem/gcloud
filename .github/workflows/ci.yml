@@ -21,6 +21,10 @@ jobs:
           service_account_email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
+      - name: Initialize App Engine application
+        run: |
+          gcloud app describe || gcloud app create --region=us-east1       
+
   authenticate:
     name: Authenticate to Google Cloud
     runs-on: ubuntu-latest
