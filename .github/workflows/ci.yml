@@ -21,13 +21,13 @@ jobs:
           service_account_email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}     
 
-  authenticate:
-    name: Authenticate to Google Cloud
-    runs-on: ubuntu-latest
+  # authenticate:
+  #   name: Authenticate to Google Cloud
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
 
       - uses: 'actions/checkout@v4' # Must come first!
       - uses: 'google-github-actions/auth@v2'
