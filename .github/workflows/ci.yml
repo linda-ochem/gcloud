@@ -19,7 +19,7 @@ jobs:
         with:
           project_id: ${{ secrets.PROJECT_ID }}
           service_account_email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
-          # service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+          ## service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
   authenticate:
     name: Authenticate to Google Cloud
