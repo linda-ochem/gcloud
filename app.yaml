@@ -1,12 +1,37 @@
-runtime: nodejs18
+runtime: nodejs14
 
 handlers:
-  - url: /.*
+  - url: /
     static_files: build/index.html
     upload: build/index.html
-    secure: always
 
-  - url: /(.*)
-    static_files: build/\1
-    upload: build/(.*)
-    secure: always
+  - url: /
+    static_dir: build
+
+  - url: /static
+    static_dir: build/static
+
+  - url: /manifest.json
+    static_files: build/manifest.json
+    upload: build/manifest.json
+
+  - url: /favicon.ico
+    static_files: build/favicon.ico
+    upload: build/favicon.ico
+
+
+
+
+
+# runtime: nodejs18
+
+# handlers:
+#   - url: /.*
+#     static_files: build/index.html
+#     upload: build/index.html
+#     secure: always
+
+#   - url: /(.*)
+#     static_files: build/\1
+#     upload: build/(.*)
+#     secure: always
