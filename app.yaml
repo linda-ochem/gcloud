@@ -1,37 +1,57 @@
-runtime: nodejs18
-
-handlers:
-  - url: /
-    static_files: build/index.html
-    upload: build/index.html
-
-  - url: /
-    static_dir: build
-
-  - url: /static
-    static_dir: build/static
-
-  - url: /manifest.json
-    static_files: build/manifest.json
-    upload: build/manifest.json
-
-  - url: /favicon.ico
-    static_files: build/favicon.ico
-    upload: build/favicon.ico
-
-
-
-
-
 # runtime: nodejs18
 
 # handlers:
-#   - url: /.*
+#   - url: /
 #     static_files: build/index.html
 #     upload: build/index.html
-#     secure: always
 
-#   - url: /(.*)
-#     static_files: build/\1
-#     upload: build/(.*)
-#     secure: always
+#   - url: /
+#     static_dir: build
+
+#   - url: /static
+#     static_dir: build/static
+
+#   - url: /manifest.json
+#     static_files: build/manifest.json
+#     upload: build/manifest.json
+
+#   - url: /favicon.ico
+#     static_files: build/favicon.ico
+#     upload: build/favicon.ico
+
+
+
+
+
+# # runtime: nodejs18
+
+# # handlers:
+# #   - url: /.*
+# #     static_files: build/index.html
+# #     upload: build/index.html
+# #     secure: always
+
+# #   - url: /(.*)
+# #     static_files: build/\1
+# #     upload: build/(.*)
+# #     secure: always
+
+
+runtime: nodejs18
+
+instance_class: F1
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 5
+
+entrypoint: npm start
+
+handlers:
+  - url: /static
+    static_dir: public
+
+  - url: /.*
+    script: auto
+
