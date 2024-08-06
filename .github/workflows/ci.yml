@@ -36,7 +36,7 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.DOCKER_PASSWORD }}/workout:latest
+        docker push ${{ secrets.DOCKER_USER }}/workout:latest
 
 
 # name: Google Cloud Engine Deployment
