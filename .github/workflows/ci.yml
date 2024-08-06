@@ -32,11 +32,11 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USER }}/my-workout-app:latest .
+        docker build -t ${{ secrets.DOCKER_USER }}/workout:latest .
 
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.DOCKER_PASSWORD }}/my-workout-app:latest
+        docker push ${{ secrets.DOCKER_PASSWORD }}/workout:latest
 
 
 # name: Google Cloud Engine Deployment
